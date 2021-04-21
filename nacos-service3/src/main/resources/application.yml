@@ -1,0 +1,23 @@
+server:
+  port: 8080
+zuul:
+  routes:
+    nacos-service1: /service1/**
+  ribbon-isolation-strategy: thread
+  add-host-header: true
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: nacos-zuul #不指定无法注册到nacos上
+logging:
+  level:
+    root: info
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 6000
+  ConnectTimeout: 2000
