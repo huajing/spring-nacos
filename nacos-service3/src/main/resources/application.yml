@@ -5,7 +5,9 @@ zuul:
     nacos-service1: /service1/**
   ribbon-isolation-strategy: thread
   add-host-header: true
-
+  host:
+    connect-timeout-millis: 2000
+    socket-timeout-millis: 10000
 spring:
   cloud:
     nacos:
@@ -16,6 +18,7 @@ spring:
 logging:
   level:
     root: info
+
 ribbon:
   eager-load:
     enabled: true

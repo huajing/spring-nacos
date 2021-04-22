@@ -7,3 +7,9 @@ spring:
         server-addr: 127.0.0.1:8848
   application:
     name: nacos-service1 #不指定无法注册到nacos上
+feign:
+  hystrix:
+    enabled: true #默认不开启
+ribbon:
+  ReadTimeout: 1000
+  ConnectTimeout: 1000
